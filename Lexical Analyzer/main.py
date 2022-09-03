@@ -22,7 +22,7 @@ def main():
                ('T113', r'Size\b'),
                ('T114', r'Onclick\b'),
                ('T115', r'[:]'),
-               ('T116', r'\[[\S .]*?\]'),
+               ('T116', r'\[[\S ]*?\]'),
                ('T117', r'\"[\S ]*?\"'),
                ('T118', r'[A-Za-z-_]+[0-9]?'),
                ('T400', r'.')
@@ -31,8 +31,7 @@ def main():
     row = 1
     for match in re.finditer(tok_regex, string.read()):
         if match.lastgroup == 'T400':
-            print(f'Error on row {row}, ID: {match.lastgroup}, name: {match.group()}')
-            break
+            raise RuntimeError(f'{match.group()!r} unexpected on line {row}')
         elif match.lastgroup == 'T001' or match.lastgroup == 'T002':
             row = row + match.group().count('\n')
         elif match.lastgroup == 'T003':
