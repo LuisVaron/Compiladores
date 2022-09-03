@@ -6,7 +6,6 @@ Form frmDatos
        /*
           Panel de datos básicos
       */
-      &
 Panel DatosBasicos
 Begin
 Begin
