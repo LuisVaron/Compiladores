@@ -1,0 +1,60 @@
+/*
+Formulario para capturar datos de un empleado
+Autor: Fran Romero
+*/
+Form frmDatos
+       /*
+          Panel de datos básicos
+      */
+Panel DatosBasicos
+Begin
+Begin
+  Title: "Datos Básicos"
+  Size: [250,250]
+  Background: RED
+  TextBox Name
+  Begin
+    Text: "Nombre:"
+    Size: [2, 50]
+    Background: WHITE
+  End
+  TextBox Id
+  Begin
+    Text: "Identifier:"
+    Size: [2, 50]
+    Background: WHITE
+  End
+  ComboBox Nacionalidad
+  Begin
+    List: [Colombia, Venezuela, Brazil]
+    Values: [100,101,102]
+    Size: [2, 50]
+    Background: WHITE
+  End
+  CheckBox Sexo
+  Begin
+    List: [Masculino, Femenino, LGBTIQ+]
+  End
+                  End  //Termina datos básicos
+
+       /*
+          Panel de datos básicos
+      */
+         Panel Botones
+                 Begin
+                    Button OK
+                    Begin
+     Text: "Aceptar"
+     Background: GRAY
+     Onclick:  btnOKOnclick
+                    End
+                    Button Cancel
+                    Begin
+     Text: "Cancelar"
+     Background: GRAY
+     Onclick:  btnCancelOnclick
+                    End
+
+                 End
+
+End
