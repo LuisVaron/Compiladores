@@ -3,9 +3,9 @@ import re
 
 def main():
     string = open('Ejemplo.txt', 'r')
-    pattern = [('T001', r'\/\/.+|\/\*[\s\S]*?\*\/'),  #Comments
-               ('T002', r'[ \t]+'),  #Tabs and spaces
-               ('T003', r'\n'),  #Skiplines
+    pattern = [('T001', r'\/\/.+|\/\*[\s\S]*?\*\/'),  # Comments
+               ('T002', r'[ \t]+'),  # Tabs and spaces
+               ('T003', r'\n'),  # Skiplines
                ('T100', r'Form\b'),
                ('T101', r'Panel\b'),
                ('T102', r'Begin\b'),
@@ -22,17 +22,14 @@ def main():
                ('T113', r'Size\b'),
                ('T114', r'Onclick\b'),
                ('T115', r'[:]'),
-               #('T116', r'(?<=[\" \S])[\"]|[\"](?=[\S ]*\")'),  #Quote
-               ('T116', r'"'),  #Quote
-               #('T117', r'(?<!\n)[,](?=[ \S]*\])'), #Commas
+               ('T116', r'"'),  # Quote
                ('T117', r','),  # Commas
                ('T118', r'[\[]'),
                ('T119', r'[\]]'),
-               ('T120', r'\[[\S ]*?\]'),
-               ('T121', r'(?!").*(?=")'),  #Strings
-               ('T122', r'[A-Za-z-_]+[0-9+]?'),  #Identifiers
-               ('T123', r'\d+(\.\d*)?'),  #Numbers
-               ('T400', r'.')  #Errors
+               ('T120', r'(?!").*(?=")'),  # Strings
+               ('T121', r'[A-Za-z-_]+[0-9+]?'),  # Identifiers
+               ('T122', r'\d+(\.\d*)?'),  # Numbers
+               ('T400', r'.')  # Errors
                ]
     tok_regex = '|'.join(f'(?P<{pair[0]}>{pair[1]})' for pair in pattern)
     row = 1
@@ -44,7 +41,7 @@ def main():
         elif match.lastgroup == 'T003':
             row += 1
         else:
-            print(f"ID: '{match.lastgroup}', name: '{match.group()}', row: {row}")
+            print(f"row: {row}, ID: '{match.lastgroup}', name: '{match.group()}'")
 
 
 if __name__ == '__main__':
