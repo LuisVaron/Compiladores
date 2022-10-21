@@ -1,60 +1,64 @@
 /*
-Formulario para capturar datos de un empleado
+Employees survey 
 Autor: Fran Romero
 */
 Form frmDatos
+Begin
+          Title: "Formulario para recolectar datos bsicos"
+           Size: [350, 850]
+           Background: WHITE
        /*
-          Panel de datos básicos
+          Basic data panel
       */
 Panel DatosBasicos
 Begin
-Begin
   Title: "Datos Basicos"
-  Size: [250,250]
+  Size: [250, 250]
   Background: RED
   TextBox Name
   Begin
     Text: "Nombre:"
     Size: [2, 50]
     Background: WHITE
-  End
+  End //End textbox name
   TextBox Id
   Begin
     Text: "Identifier:"
     Size: [2, 50]
     Background: WHITE
-  End
+  End //End textbox Id
   ComboBox Nacionalidad
   Begin
     List: [Colombia, Venezuela, Brazil]
     Values: [100,101,102]
     Size: [2, 50]
-    Background: WHITE
-  End
+    Background: WHITE    
+  End //End combobox nacionalidad
   CheckBox Sexo
   Begin
     List: [Masculino, Femenino, LGBTIQ+]
-  End
-                  End  //Termina datos básicos
-
+  End //End checkboxsexo
+                  End  //End basic data panel
        /*
-          Panel de datos básicos
+          Action panel
       */
-         Panel Botones
+         Panel Botones 
                  Begin
+  Title: "Acciones"
+  Size: [250, 150]
+  Background: GREEN         
                     Button OK
                     Begin
      Text: "Aceptar"
      Background: GRAY
-     Onclick:  btnOKOnclick
-                    End
+     Onclick:  btnOKOnclick 
+                    End  //End button OK
                     Button Cancel
                     Begin
      Text: "Cancelar"
      Background: GRAY
      Onclick:  btnCancelOnclick
-                    End
-
-                 End
-
-End
+                    End //End button Cancel
+                 End //End Panel Botones
+    
+End //End Form
