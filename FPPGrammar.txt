@@ -20,7 +20,7 @@
 <ValuesValues> ::= <Number>','<ListValues>|<Number>
 <CheckBox> ::= 'CheckBox'<FreeText>'Begin'<List><'End'<Components>?
 <Button> ::= 'Button'<FreeText>'Begin'<ButtonFeatures>'End'<Components>?
-<ButtonFeatures> ::= <ButtonText><Background><ButtonOnclick>
+<ButtonFeatures> ::= <Text><Background><ButtonOnclick>
 <ButtonOnclick> ::= 'Onclick'':'<ButtonAction>
 <ButtonAction> ::= 'btnOKOnclick'|'btnCancelOnclick'
 <Textws> ::= <Freetext>' '|<Freetext>
