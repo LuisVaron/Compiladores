@@ -9,7 +9,7 @@ Form frmDatos
 Panel DatosBasicos
 Begin
 Begin
-  Title: "Datos Básicos"
+  Title: "Datos Basicos"
   Size: [250,250]
   Background: RED
   TextBox Name

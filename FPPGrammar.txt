@@ -1,0 +1,18 @@
+<Document> ::= 'Form'<FreeText><Form>
+<Form> ::= 'Begin'<FormComponents>'End'
+<FormComponents> ::= <PanelFeatures><Components>|<PanelFeatures>
+<PanelFeatures> ::= 'Title'':''"'<FreeText>'"' 'Size'':''['<Number>','<Number>']' 'Background'':'<Color>
+<Color> ::= 'WHITE'|'RED'|'GREEN'|'GRAY'
+<Components> ::= <Panel>|<TextBox>|<ComboBox>|<CheckBox>|<Button>
+<Panel> ::= 'Panel'<FreeText>'Begin'<PanelFeatures><Components>'End'
+<TextBox> ::= 'TextBox'<FreeText>'Begin'<TextBoxFeatures>'End'
+<TextBoxFeatures> ::= 'Text'':''"'<FreeText>'"' 'Size'':''['<Number>','<Number>']' 'Background'':'<Color>
+<ComboBox> ::= 'ComboBox'<FreeText>'Begin'<ComboBoxFeatures>'End'
+<ComboBoxFeatures> ::= 'List'':''['<ListValues>']' 'Values'':''['<ValuesValues>']' 'Size'':''['<Number>','<Number>']' 'Background'':'<Color>
+<ListValues> ::= <FreeText>','<ListValues>|<FreeText>
+<ValuesValues> ::= <Number>','<ListValues>|<Number>
+<CheckBox> ::= 'CheckBox'<FreeText>'Begin'<PanelFeatures><'End'
+<CheckBoxFeatures> ::= 'List'':''['<ListValues>']'
+<Button> ::= 'Button'<FreeText>'Begin'<ButtonFeatures>'End'
+<ButtonFeatures> ::= 'Text'':''"'<FreeText>'"' 'Background'':'<Color> 'Onclick'':'<FreeText>
+
