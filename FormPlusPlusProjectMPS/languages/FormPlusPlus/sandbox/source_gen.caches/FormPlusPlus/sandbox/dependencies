@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <uses language="l:33e7f45b-147f-42d0-86ff-61e2bcaba42e:FormPlusPlus" />
+  <uses module="140d4907-d145-44d9-893a-81f70b845141(FormPlusPlus.runtime)" kind="rt" />
+</dependenciesRoot>
+
