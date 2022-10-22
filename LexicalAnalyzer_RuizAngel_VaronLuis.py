@@ -1,11 +1,10 @@
 import re
+from tkinter.filedialog import askopenfilename
 
-## Lexical Analyzer developed by Miguel Ruiz and Luis Varon as project of the first part of the semester of compilators class
-## Teacher in charge: Fran Ernesto Romero
-## Date: 08/09/2022
 
 class Pattern:
-    token_info = [('T001', r'\/\/.+|\/\*[\s\S]*?\*\/'),  # Comments
+    token_info = [
+               ('T001', r'\/\/.+|\/\*[\s\S]*?\*\/'),  # Comments
                ('T002', r'[ \t]+'),  # Tabs and spaces
                ('T003', r'\n'),  # Skiplines
                ('T100', r'Form\b'),
@@ -36,7 +35,8 @@ class Pattern:
                ('T400', r'.')  # Errors
                ]
 
-def Tokenizer(file, token_info) -> []:
+
+def Tokenizer(file, token_info):
     value = file.read()
     tokens = []
     tok_regex = '|'.join(f'(?P<{pair[0]}>{pair[1]})' for pair in token_info)
@@ -53,7 +53,8 @@ def Tokenizer(file, token_info) -> []:
             tokens.append((match,row))
     return tokens
 
-def Parser(tokens: []):
+
+def Parser(tokens):
     def nextToken():
         tokens.pop(0)
     def Document():
@@ -332,9 +333,16 @@ def Parser(tokens: []):
             raise RuntimeError(f'{tokens[0][0].group()!r} unexpected on line {tokens[0][1]}')
     Document()  
 
-if __name__ == '__main__':
-    file = open('Ejemplo.txt', 'r')
+
+def main():
+    filename = askopenfilename()
+    file = open(filename, 'r')
     info = Tokenizer(file, Pattern.token_info)
     Parser(info) 
+
+
+if __name__ == '__main__':
+    main()
+
     
 
