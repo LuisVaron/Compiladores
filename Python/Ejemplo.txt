@@ -39,7 +39,7 @@ Begin
     List: [Masculino, Femenino, LGBTIQ+]
   End //End checkboxsexo
                   End  //End basic data panel
-       /*
+       /* 
           Action panel
       */
          Panel Botones 
