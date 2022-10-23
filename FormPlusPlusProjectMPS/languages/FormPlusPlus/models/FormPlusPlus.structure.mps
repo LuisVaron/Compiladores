@@ -155,8 +155,8 @@
     <property role="EcuMT" value="9120391208080373616" />
     <property role="TrG5h" value="Background" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="1TJgyj" id="7Ui8RHqevuL" role="1TKVEi">
-      <property role="IQ2ns" value="9120391208080373681" />
+    <node concept="1TJgyj" id="3l1zJKJ79RA" role="1TKVEi">
+      <property role="IQ2ns" value="3837505571269680614" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Color" />
       <property role="20lbJX" value="fLJekj4/_1" />
@@ -166,7 +166,7 @@
   <node concept="1TIwiD" id="7Ui8RHqevtL">
     <property role="EcuMT" value="9120391208080373617" />
     <property role="TrG5h" value="Color" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7Ui8RHqevuN" role="1TKVEl">
       <property role="IQ2nx" value="9120391208080373683" />
       <property role="TrG5h" value="Color" />
@@ -178,41 +178,6 @@
     <property role="TrG5h" value="Component" />
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="1TJgyj" id="7Ui8RHqevuR" role="1TKVEi">
-      <property role="IQ2ns" value="9120391208080373687" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Panel" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="7Ui8RHqevtP" resolve="Panel" />
-    </node>
-    <node concept="1TJgyj" id="7Ui8RHqevuT" role="1TKVEi">
-      <property role="IQ2ns" value="9120391208080373689" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="TextBox" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="7Ui8RHqevtQ" resolve="TextBox" />
-    </node>
-    <node concept="1TJgyj" id="7Ui8RHqevuW" role="1TKVEi">
-      <property role="IQ2ns" value="9120391208080373692" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="ComboBox" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="7Ui8RHqevtT" resolve="ComboBox" />
-    </node>
-    <node concept="1TJgyj" id="7Ui8RHqevv0" role="1TKVEi">
-      <property role="IQ2ns" value="9120391208080373696" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="CheckBox" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="7Ui8RHqevtZ" resolve="CheckBox" />
-    </node>
-    <node concept="1TJgyj" id="7Ui8RHqevv5" role="1TKVEi">
-      <property role="IQ2ns" value="9120391208080373701" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Button" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="7Ui8RHqevu0" resolve="Button" />
-    </node>
   </node>
   <node concept="1TIwiD" id="7Ui8RHqevtP">
     <property role="EcuMT" value="9120391208080373621" />
