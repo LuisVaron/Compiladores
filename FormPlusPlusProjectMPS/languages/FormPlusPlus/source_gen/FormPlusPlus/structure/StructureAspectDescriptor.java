@@ -139,7 +139,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373616");
     b.version(3);
-    b.aggregate("Color", 0x7e92237b5a39f7b1L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f771L).optional(false).ordered(true).multiple(false).origin("9120391208080373681").done();
+    b.aggregate("Color", 0x35418efc2f1c9de6L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f771L).optional(false).ordered(true).multiple(false).origin("3837505571269680614").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForButton() {
@@ -233,11 +233,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373618");
     b.version(3);
-    b.aggregate("Panel", 0x7e92237b5a39f7b7L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f775L).optional(true).ordered(true).multiple(true).origin("9120391208080373687").done();
-    b.aggregate("TextBox", 0x7e92237b5a39f7b9L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f776L).optional(true).ordered(true).multiple(true).origin("9120391208080373689").done();
-    b.aggregate("ComboBox", 0x7e92237b5a39f7bcL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f779L).optional(true).ordered(true).multiple(true).origin("9120391208080373692").done();
-    b.aggregate("CheckBox", 0x7e92237b5a39f7c0L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f77fL).optional(true).ordered(true).multiple(true).origin("9120391208080373696").done();
-    b.aggregate("Button", 0x7e92237b5a39f7c5L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f780L).optional(true).ordered(true).multiple(true).origin("9120391208080373701").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDocument() {

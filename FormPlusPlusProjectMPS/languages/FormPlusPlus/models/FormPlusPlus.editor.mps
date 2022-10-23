@@ -18,6 +18,7 @@
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
+      <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -156,24 +157,6 @@
       <node concept="2iRfu4" id="7Ui8RHqeLVT" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="7Ui8RHqeLWJ">
-    <ref role="1XX52x" to="og33:7Ui8RHqevtK" resolve="Background" />
-    <node concept="3EZMnI" id="7Ui8RHqeLWL" role="2wV5jI">
-      <node concept="3F0ifn" id="7Ui8RHqeLWV" role="3EZMnx">
-        <property role="3F0ifm" value="Background: " />
-      </node>
-      <node concept="3F1sOY" id="7Ui8RHqeLX1" role="3EZMnx">
-        <ref role="1NtTu8" to="og33:7Ui8RHqevuL" resolve="Color" />
-      </node>
-      <node concept="2iRfu4" id="7Ui8RHqeLWO" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="7Ui8RHqeLXc">
-    <ref role="1XX52x" to="og33:7Ui8RHqevtL" resolve="Color" />
-    <node concept="3F0A7n" id="7Ui8RHqf1T$" role="2wV5jI">
-      <ref role="1NtTu8" to="og33:7Ui8RHqevuN" resolve="Color" />
-    </node>
-  </node>
   <node concept="24kQdi" id="7Ui8RHqeOQF">
     <ref role="1XX52x" to="og33:7Ui8RHqevtS" resolve="Text" />
     <node concept="3EZMnI" id="7Ui8RHqeOQH" role="2wV5jI">
@@ -193,15 +176,6 @@
     <ref role="1XX52x" to="og33:7Ui8RHqevu4" resolve="Textws" />
     <node concept="3F0A7n" id="7Ui8RHqeOR7" role="2wV5jI">
       <ref role="1NtTu8" to="og33:7Ui8RHqexIH" resolve="Text" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="7Ui8RHqfFvZ">
-    <ref role="1XX52x" to="og33:7Ui8RHqevtM" resolve="Component" />
-    <node concept="3EZMnI" id="7Ui8RHqfFw1" role="2wV5jI">
-      <node concept="PMmxH" id="7Ui8RHqfFw8" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="2iRkQZ" id="7Ui8RHqfFw4" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="7Ui8RHqfJcW">
@@ -506,8 +480,43 @@
   </node>
   <node concept="24kQdi" id="7Ui8RHqh_Mp">
     <ref role="1XX52x" to="og33:7Ui8RHqevu3" resolve="ButtonAction" />
-    <node concept="3F0A7n" id="7Ui8RHqh_Mr" role="2wV5jI">
-      <ref role="1NtTu8" to="og33:7Ui8RHqexIF" resolve="Action" />
+    <node concept="3EZMnI" id="3l1zJKJa1iT" role="2wV5jI">
+      <node concept="3F0ifn" id="3l1zJKJa1iZ" role="3EZMnx" />
+      <node concept="3F0A7n" id="3l1zJKJa1j5" role="3EZMnx">
+        <ref role="1NtTu8" to="og33:7Ui8RHqexIF" resolve="Action" />
+      </node>
+      <node concept="l2Vlx" id="3l1zJKJa1iU" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3l1zJKJ79SC">
+    <ref role="1XX52x" to="og33:7Ui8RHqevtK" resolve="Background" />
+    <node concept="3EZMnI" id="3l1zJKJ79SE" role="2wV5jI">
+      <node concept="3F0ifn" id="3l1zJKJ79SO" role="3EZMnx">
+        <property role="3F0ifm" value="Background:" />
+      </node>
+      <node concept="3F1sOY" id="3l1zJKJ79SU" role="3EZMnx">
+        <ref role="1NtTu8" to="og33:3l1zJKJ79RA" resolve="Color" />
+      </node>
+      <node concept="2iRfu4" id="3l1zJKJ79SH" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3l1zJKJ7vYN">
+    <ref role="1XX52x" to="og33:7Ui8RHqevtL" resolve="Color" />
+    <node concept="3EZMnI" id="3l1zJKJ87UH" role="2wV5jI">
+      <node concept="3F0ifn" id="3l1zJKJ9Ru5" role="3EZMnx" />
+      <node concept="l2Vlx" id="3l1zJKJ87UI" role="2iSdaV" />
+      <node concept="3F0A7n" id="3l1zJKJ87UL" role="3EZMnx">
+        <ref role="1NtTu8" to="og33:7Ui8RHqevuN" resolve="Color" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3l1zJKJ8JdX">
+    <ref role="1XX52x" to="og33:7Ui8RHqevtM" resolve="Component" />
+    <node concept="3EZMnI" id="3l1zJKJ94Yq" role="2wV5jI">
+      <node concept="PMmxH" id="3l1zJKJ94Yx" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="2iRkQZ" id="3l1zJKJ94Yt" role="2iSdaV" />
     </node>
   </node>
 </model>
