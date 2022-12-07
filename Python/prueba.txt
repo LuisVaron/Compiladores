@@ -24,22 +24,16 @@ Begin
   TextBox Name
   Begin
     Text: "Nombre:"
-    Size: [2, 50]
+    Size: [20, 50]
     Background: WHITE
   End //End textbox name
   TextBox Id
   Begin
     Text: "Identifier:"
-    Size: [2, 50]
+    Size: [20, 50]
     Background: WHITE
   End //End textbox Id
-  ComboBox Nacionalidad
-  Begin
-    List: [Colombia, Venezuela, Brazil]
-    Values: [100,101,102]
-    Size: [2, 50]
-    Background: WHITE    
-  End //End combobox nacionalidad
+ 
   CheckBox Sexo
   Begin
     List: [Masculino, Femenino, LGBTIQ+]
