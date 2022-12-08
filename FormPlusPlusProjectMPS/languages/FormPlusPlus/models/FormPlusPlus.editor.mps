@@ -82,7 +82,7 @@
         <node concept="VPM3Z" id="7Ui8RHqfgAe" role="3F10Kt" />
         <node concept="3XFhqQ" id="7Ui8RHqfgAp" role="3EZMnx" />
         <node concept="3F1sOY" id="7Ui8RHqfgAv" role="3EZMnx">
-          <ref role="1NtTu8" to="og33:7Ui8RHqeHj1" resolve="FormComponents" />
+          <ref role="1NtTu8" to="og33:7Ui8RHqeHj1" resolve="FormComponent" />
         </node>
         <node concept="2iRfu4" id="7Ui8RHqfgAh" role="2iSdaV" />
       </node>
@@ -93,7 +93,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7Ui8RHqeKlr">
-    <ref role="1XX52x" to="og33:7Ui8RHqevtG" resolve="FormComponents" />
+    <ref role="1XX52x" to="og33:7Ui8RHqevtG" resolve="FormComponent" />
     <node concept="3EZMnI" id="7Ui8RHqeKlw" role="2wV5jI">
       <node concept="3F1sOY" id="7Ui8RHqeKlB" role="3EZMnx">
         <ref role="1NtTu8" to="og33:7Ui8RHqevur" resolve="PanelFeatures" />

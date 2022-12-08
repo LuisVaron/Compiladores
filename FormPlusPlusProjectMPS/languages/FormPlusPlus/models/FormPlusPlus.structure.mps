@@ -74,14 +74,14 @@
     <node concept="1TJgyj" id="7Ui8RHqeHj1" role="1TKVEi">
       <property role="IQ2ns" value="9120391208080430273" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="FormComponents" />
+      <property role="20kJfa" value="FormComponent" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7Ui8RHqevtG" resolve="FormComponents" />
+      <ref role="20lvS9" node="7Ui8RHqevtG" resolve="FormComponent" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Ui8RHqevtG">
     <property role="EcuMT" value="9120391208080373612" />
-    <property role="TrG5h" value="FormComponents" />
+    <property role="TrG5h" value="FormComponent" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
     <node concept="1TJgyj" id="7Ui8RHqevur" role="1TKVEi">
       <property role="IQ2ns" value="9120391208080373659" />

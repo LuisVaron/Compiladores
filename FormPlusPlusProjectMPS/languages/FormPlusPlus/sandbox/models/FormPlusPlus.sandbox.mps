@@ -7,6 +7,9 @@
   <imports />
   <registry>
     <language id="33e7f45b-147f-42d0-86ff-61e2bcaba42e" name="FormPlusPlus">
+      <concept id="9120391208080373624" name="FormPlusPlus.structure.Text" flags="ng" index="$EXg3">
+        <child id="9120391208080382821" name="Textws" index="$E3wu" />
+      </concept>
       <concept id="9120391208080373617" name="FormPlusPlus.structure.Color" flags="ng" index="$EXga" />
       <concept id="9120391208080373616" name="FormPlusPlus.structure.Background" flags="ng" index="$EXgb">
         <child id="3837505571269680614" name="Color" index="qnhcq" />
@@ -28,20 +31,46 @@
       </concept>
       <concept id="9120391208080373612" name="FormPlusPlus.structure.FormComponents" flags="ng" index="$EXgn">
         <child id="9120391208080373659" name="PanelFeatures" index="$EXjw" />
+        <child id="9120391208080373661" name="Component" index="$EXjA" />
+      </concept>
+      <concept id="9120391208080373635" name="FormPlusPlus.structure.ButtonAction" flags="ng" index="$EXjS" />
+      <concept id="9120391208080373634" name="FormPlusPlus.structure.ButtonOnClick" flags="ng" index="$EXjT">
+        <child id="9120391208080382889" name="ButtonAction" index="$E3zi" />
+      </concept>
+      <concept id="9120391208080373633" name="FormPlusPlus.structure.ButtonFeatures" flags="ng" index="$EXjU">
+        <child id="9120391208080382882" name="Background" index="$E3zp" />
+        <child id="9120391208080382880" name="Text" index="$E3zr" />
+        <child id="9120391208080382885" name="ButtonOnClick" index="$E3zu" />
+      </concept>
+      <concept id="9120391208080373632" name="FormPlusPlus.structure.Button" flags="ng" index="$EXjV">
+        <child id="9120391208080382875" name="ButtonFeatures" index="$E3zw" />
       </concept>
       <concept id="9120391208080373636" name="FormPlusPlus.structure.Textws" flags="ng" index="$EXjZ" />
     </language>
   </registry>
-  <node concept="$EXgh" id="3l1zJKJ9eM7">
-    <node concept="$EXgg" id="3l1zJKJ9eM8" role="$EXjy">
-      <node concept="$EXgn" id="3l1zJKJ9eM9" role="$EfuU">
-        <node concept="$EXgm" id="3l1zJKJ9eMa" role="$EXjw">
-          <node concept="$EXgl" id="3l1zJKJ9eMb" role="$EXjg">
-            <node concept="$EXjZ" id="3l1zJKJ9eMc" role="$EXjk" />
+  <node concept="$EXgh" id="5qj5ebVG7ft">
+    <node concept="$EXgg" id="5qj5ebVG7fu" role="$EXjy">
+      <node concept="$EXgn" id="5qj5ebVG7fv" role="$EfuU">
+        <node concept="$EXgm" id="5qj5ebVG7fw" role="$EXjw">
+          <node concept="$EXgl" id="5qj5ebVG7fx" role="$EXjg">
+            <node concept="$EXjZ" id="5qj5ebVG7fy" role="$EXjk" />
           </node>
-          <node concept="$EXgk" id="3l1zJKJ9eMd" role="$EXjp" />
-          <node concept="$EXgb" id="3l1zJKJ9eMe" role="$EXju">
-            <node concept="$EXga" id="3l1zJKJ9pBn" role="qnhcq" />
+          <node concept="$EXgk" id="5qj5ebVG7fz" role="$EXjp" />
+          <node concept="$EXgb" id="5qj5ebVG7f$" role="$EXju">
+            <node concept="$EXga" id="5qj5ebVG7f_" role="qnhcq" />
+          </node>
+        </node>
+        <node concept="$EXjV" id="5qj5ebVG7fA" role="$EXjA">
+          <node concept="$EXjU" id="5qj5ebVG7fB" role="$E3zw">
+            <node concept="$EXg3" id="5qj5ebVG7fC" role="$E3zr">
+              <node concept="$EXjZ" id="5qj5ebVG7fD" role="$E3wu" />
+            </node>
+            <node concept="$EXgb" id="5qj5ebVG7fE" role="$E3zp">
+              <node concept="$EXga" id="5qj5ebVG7fF" role="qnhcq" />
+            </node>
+            <node concept="$EXjT" id="5qj5ebVG7fG" role="$E3zu">
+              <node concept="$EXjS" id="5qj5ebVG7fH" role="$E3zi" />
+            </node>
           </node>
         </node>
       </node>
