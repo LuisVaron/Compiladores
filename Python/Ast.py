@@ -318,7 +318,7 @@ class llValues(Node):
         self.son1 = son1
     
     def interpret(self, ident, lType):
-        if(lType == 'ch')
+        if(lType == 'ch'):
             son1 = self.son1.interpret(ident, lType)
             return(f'{ident}<input type="checkbox" id="{self.ID}" name="{self.ID}" value="{self.ID}"/> <label>{self.ID}</label> <br>\n{son1}')
 

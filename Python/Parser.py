@@ -1,4 +1,5 @@
 from tkinter import filedialog as fd
+from tkinter.filedialog import asksaveasfilename
 import ply.yacc as yacc
 from Lexer import tokens
 from Ast import *
@@ -193,16 +194,17 @@ def p_empty(p):
     pass
 
 def p_error(p):
-    print('error de sintaxis', p, p.lineno)
+    raise ValueError('error de sintaxis', p, p.lineno)
 
-#Search file to open
-filename = fd.askopenfilename()
-s =  open(filename, 'r').read()
 
-#initialize parser
-parser = yacc.yacc()
-result = parser.parse(s)
+def compile(code):
+    try:
+        parser = yacc.yacc()
+        result = parser.parse(code)
+        path = asksaveasfilename(filetypes=[('html file','.html')])
+        with open(path, 'w') as file:
+            file.write(result.interpret('\t'))
+        return 'Form created succesfully.'
+    except (ValueError, AttributeError) as ve:
+        return ve
 
-graphFile = open('form.html','w')
-graphFile.write(result.interpret('\t'))
-graphFile.close()
