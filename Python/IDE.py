@@ -39,8 +39,12 @@ def saveMyFile():
         code = textEditor.get('1.0', END)
         file.write(code)
 
+v=Scrollbar(window, orient='vertical')
+v.pack(side=RIGHT, fill='y')
+
 textEditor = Text()
-textEditor.config(bg='#362f2e', fg='#d2ded1', insertbackground='white')
+textEditor.config(bg='#362f2e', fg='#d2ded1', insertbackground='white', yscrollcommand=v.set)
+v.config(command=textEditor.yview)
 textEditor.pack()
 
 output = Text(height=7)
