@@ -22,10 +22,10 @@ public final class LanguageConceptSwitch {
   public static final int Component = 10;
   public static final int Document = 11;
   public static final int Form = 12;
-  public static final int FormComponents = 13;
+  public static final int FormComponent = 13;
   public static final int List = 14;
-  public static final int ListValue = 15;
-  public static final int ListValues = 16;
+  public static final int ListValues = 15;
+  public static final int LlValues = 16;
   public static final int Panel = 17;
   public static final int PanelFeatures = 18;
   public static final int PanelTitle = 19;
@@ -33,9 +33,8 @@ public final class LanguageConceptSwitch {
   public static final int Text = 21;
   public static final int TextBox = 22;
   public static final int TextBoxFeatures = 23;
-  public static final int Textws = 24;
-  public static final int ValuesValues = 25;
-  public static final int Valuesvalue = 26;
+  public static final int ValuesValues = 24;
+  public static final int Valuesvalue = 25;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL);
@@ -52,10 +51,10 @@ public final class LanguageConceptSwitch {
     builder.put(0x7e92237b5a39f772L, Component);
     builder.put(0x7e92237b5a39f76aL, Document);
     builder.put(0x7e92237b5a39f76bL, Form);
-    builder.put(0x7e92237b5a39f76cL, FormComponents);
+    builder.put(0x7e92237b5a39f76cL, FormComponent);
     builder.put(0x7e92237b5a39f77bL, List);
-    builder.put(0x7e92237b5a439c60L, ListValue);
-    builder.put(0x7e92237b5a39f77dL, ListValues);
+    builder.put(0x569314e2fbb68fafL, ListValues);
+    builder.put(0x569314e2fbb68fceL, LlValues);
     builder.put(0x7e92237b5a39f775L, Panel);
     builder.put(0x7e92237b5a39f76dL, PanelFeatures);
     builder.put(0x7e92237b5a39f76eL, PanelTitle);
@@ -63,7 +62,6 @@ public final class LanguageConceptSwitch {
     builder.put(0x7e92237b5a39f778L, Text);
     builder.put(0x7e92237b5a39f776L, TextBox);
     builder.put(0x7e92237b5a39f777L, TextBoxFeatures);
-    builder.put(0x7e92237b5a39f784L, Textws);
     builder.put(0x7e92237b5a39f77eL, ValuesValues);
     builder.put(0x7e92237b5a449817L, Valuesvalue);
     myIndex = builder.seal();

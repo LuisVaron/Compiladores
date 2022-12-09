@@ -1,0 +1,1175 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> document
+Rule 1     document -> FORM ID form
+Rule 2     form -> BEGIN formComponent END
+Rule 3     formComponent -> panelFeatures component
+Rule 4     panelFeatures -> panelTitle size background
+Rule 5     panelTitle -> TITLE DPOINTS QUOTES STRING QUOTES
+Rule 6     size -> SIZE DPOINTS LBRACKET NUMBER COMMA NUMBER RBRACKET
+Rule 7     background -> BGROUND DPOINTS color
+Rule 8     color -> WHITE
+Rule 9     color -> RED
+Rule 10    color -> GREEN
+Rule 11    color -> GRAY
+Rule 12    component -> panel
+Rule 13    component -> textBox
+Rule 14    component -> comboBox
+Rule 15    component -> checkBox
+Rule 16    component -> button
+Rule 17    component -> empty
+Rule 18    panel -> PANEL ID BEGIN panelFeatures component END component
+Rule 19    textBox -> TBOX ID BEGIN textBoxFeatures END component
+Rule 20    textBoxFeatures -> text size background
+Rule 21    text -> TEXT DPOINTS QUOTES STRING QUOTES
+Rule 22    comboBox -> CBOX ID BEGIN comboBoxFeatures END component
+Rule 23    comboBoxFeatures -> list comboBoxValues size background
+Rule 24    list -> LIST DPOINTS LBRACKET listValues RBRACKET
+Rule 25    listValues -> ID llValues
+Rule 26    llValues -> COMMA ID llValues
+Rule 27    llValues -> empty
+Rule 28    comboBoxValues -> VALUES DPOINTS LBRACKET valuesValues RBRACKET
+Rule 29    valuesValues -> NUMBER lvValues
+Rule 30    lvValues -> COMMA NUMBER lvValues
+Rule 31    lvValues -> empty
+Rule 32    checkBox -> CHBOX ID BEGIN list END component
+Rule 33    button -> BUTTON ID BEGIN buttonFeatures END component
+Rule 34    buttonFeatures -> text background buttonOnClick
+Rule 35    buttonOnClick -> ONCLICK DPOINTS buttonAction
+Rule 36    buttonAction -> BTNOK
+Rule 37    buttonAction -> BTNCANCEL
+Rule 38    empty -> <empty>
+
+Terminals, with rules where they appear
+
+BEGIN                : 2 18 19 22 32 33
+BGROUND              : 7
+BTNCANCEL            : 37
+BTNOK                : 36
+BUTTON               : 33
+CBOX                 : 22
+CHBOX                : 32
+COMMA                : 6 26 30
+DPOINTS              : 5 6 7 21 24 28 35
+END                  : 2 18 19 22 32 33
+FORM                 : 1
+GRAY                 : 11
+GREEN                : 10
+ID                   : 1 18 19 22 25 26 32 33
+LBRACKET             : 6 24 28
+LIST                 : 24
+NUMBER               : 6 6 29 30
+ONCLICK              : 35
+PANEL                : 18
+QUOTES               : 5 5 21 21
+RBRACKET             : 6 24 28
+RED                  : 9
+SIZE                 : 6
+STRING               : 5 21
+TBOX                 : 19
+TEXT                 : 21
+TITLE                : 5
+VALUES               : 28
+WHITE                : 8
+error                : 
+
+Nonterminals, with rules where they appear
+
+background           : 4 20 23 34
+button               : 16
+buttonAction         : 35
+buttonFeatures       : 33
+buttonOnClick        : 34
+checkBox             : 15
+color                : 7
+comboBox             : 14
+comboBoxFeatures     : 22
+comboBoxValues       : 23
+component            : 3 18 18 19 22 32 33
+document             : 0
+empty                : 17 27 31
+form                 : 1
+formComponent        : 2
+list                 : 23 32
+listValues           : 24
+llValues             : 25 26
+lvValues             : 29 30
+panel                : 12
+panelFeatures        : 3 18
+panelTitle           : 4
+size                 : 4 20 23
+text                 : 20 34
+textBox              : 13
+textBoxFeatures      : 19
+valuesValues         : 28
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . document
+    (1) document -> . FORM ID form
+
+    FORM            shift and go to state 2
+
+    document                       shift and go to state 1
+
+state 1
+
+    (0) S' -> document .
+
+
+
+state 2
+
+    (1) document -> FORM . ID form
+
+    ID              shift and go to state 3
+
+
+state 3
+
+    (1) document -> FORM ID . form
+    (2) form -> . BEGIN formComponent END
+
+    BEGIN           shift and go to state 5
+
+    form                           shift and go to state 4
+
+state 4
+
+    (1) document -> FORM ID form .
+
+    $end            reduce using rule 1 (document -> FORM ID form .)
+
+
+state 5
+
+    (2) form -> BEGIN . formComponent END
+    (3) formComponent -> . panelFeatures component
+    (4) panelFeatures -> . panelTitle size background
+    (5) panelTitle -> . TITLE DPOINTS QUOTES STRING QUOTES
+
+    TITLE           shift and go to state 9
+
+    formComponent                  shift and go to state 6
+    panelFeatures                  shift and go to state 7
+    panelTitle                     shift and go to state 8
+
+state 6
+
+    (2) form -> BEGIN formComponent . END
+
+    END             shift and go to state 10
+
+
+state 7
+
+    (3) formComponent -> panelFeatures . component
+    (12) component -> . panel
+    (13) component -> . textBox
+    (14) component -> . comboBox
+    (15) component -> . checkBox
+    (16) component -> . button
+    (17) component -> . empty
+    (18) panel -> . PANEL ID BEGIN panelFeatures component END component
+    (19) textBox -> . TBOX ID BEGIN textBoxFeatures END component
+    (22) comboBox -> . CBOX ID BEGIN comboBoxFeatures END component
+    (32) checkBox -> . CHBOX ID BEGIN list END component
+    (33) button -> . BUTTON ID BEGIN buttonFeatures END component
+    (38) empty -> .
+
+    PANEL           shift and go to state 18
+    TBOX            shift and go to state 19
+    CBOX            shift and go to state 20
+    CHBOX           shift and go to state 21
+    BUTTON          shift and go to state 22
+    END             reduce using rule 38 (empty -> .)
+
+    component                      shift and go to state 11
+    panel                          shift and go to state 12
+    textBox                        shift and go to state 13
+    comboBox                       shift and go to state 14
+    checkBox                       shift and go to state 15
+    button                         shift and go to state 16
+    empty                          shift and go to state 17
+
+state 8
+
+    (4) panelFeatures -> panelTitle . size background
+    (6) size -> . SIZE DPOINTS LBRACKET NUMBER COMMA NUMBER RBRACKET
+
+    SIZE            shift and go to state 24
+
+    size                           shift and go to state 23
+
+state 9
+
+    (5) panelTitle -> TITLE . DPOINTS QUOTES STRING QUOTES
+
+    DPOINTS         shift and go to state 25
+
+
+state 10
+
+    (2) form -> BEGIN formComponent END .
+
+    $end            reduce using rule 2 (form -> BEGIN formComponent END .)
+
+
+state 11
+
+    (3) formComponent -> panelFeatures component .
+
+    END             reduce using rule 3 (formComponent -> panelFeatures component .)
+
+
+state 12
+
+    (12) component -> panel .
+
+    END             reduce using rule 12 (component -> panel .)
+
+
+state 13
+
+    (13) component -> textBox .
+
+    END             reduce using rule 13 (component -> textBox .)
+
+
+state 14
+
+    (14) component -> comboBox .
+
+    END             reduce using rule 14 (component -> comboBox .)
+
+
+state 15
+
+    (15) component -> checkBox .
+
+    END             reduce using rule 15 (component -> checkBox .)
+
+
+state 16
+
+    (16) component -> button .
+
+    END             reduce using rule 16 (component -> button .)
+
+
+state 17
+
+    (17) component -> empty .
+
+    END             reduce using rule 17 (component -> empty .)
+
+
+state 18
+
+    (18) panel -> PANEL . ID BEGIN panelFeatures component END component
+
+    ID              shift and go to state 26
+
+
+state 19
+
+    (19) textBox -> TBOX . ID BEGIN textBoxFeatures END component
+
+    ID              shift and go to state 27
+
+
+state 20
+
+    (22) comboBox -> CBOX . ID BEGIN comboBoxFeatures END component
+
+    ID              shift and go to state 28
+
+
+state 21
+
+    (32) checkBox -> CHBOX . ID BEGIN list END component
+
+    ID              shift and go to state 29
+
+
+state 22
+
+    (33) button -> BUTTON . ID BEGIN buttonFeatures END component
+
+    ID              shift and go to state 30
+
+
+state 23
+
+    (4) panelFeatures -> panelTitle size . background
+    (7) background -> . BGROUND DPOINTS color
+
+    BGROUND         shift and go to state 32
+
+    background                     shift and go to state 31
+
+state 24
+
+    (6) size -> SIZE . DPOINTS LBRACKET NUMBER COMMA NUMBER RBRACKET
+
+    DPOINTS         shift and go to state 33
+
+
+state 25
+
+    (5) panelTitle -> TITLE DPOINTS . QUOTES STRING QUOTES
+
+    QUOTES          shift and go to state 34
+
+
+state 26
+
+    (18) panel -> PANEL ID . BEGIN panelFeatures component END component
+
+    BEGIN           shift and go to state 35
+
+
+state 27
+
+    (19) textBox -> TBOX ID . BEGIN textBoxFeatures END component
+
+    BEGIN           shift and go to state 36
+
+
+state 28
+
+    (22) comboBox -> CBOX ID . BEGIN comboBoxFeatures END component
+
+    BEGIN           shift and go to state 37
+
+
+state 29
+
+    (32) checkBox -> CHBOX ID . BEGIN list END component
+
+    BEGIN           shift and go to state 38
+
+
+state 30
+
+    (33) button -> BUTTON ID . BEGIN buttonFeatures END component
+
+    BEGIN           shift and go to state 39
+
+
+state 31
+
+    (4) panelFeatures -> panelTitle size background .
+
+    PANEL           reduce using rule 4 (panelFeatures -> panelTitle size background .)
+    TBOX            reduce using rule 4 (panelFeatures -> panelTitle size background .)
+    CBOX            reduce using rule 4 (panelFeatures -> panelTitle size background .)
+    CHBOX           reduce using rule 4 (panelFeatures -> panelTitle size background .)
+    BUTTON          reduce using rule 4 (panelFeatures -> panelTitle size background .)
+    END             reduce using rule 4 (panelFeatures -> panelTitle size background .)
+
+
+state 32
+
+    (7) background -> BGROUND . DPOINTS color
+
+    DPOINTS         shift and go to state 40
+
+
+state 33
+
+    (6) size -> SIZE DPOINTS . LBRACKET NUMBER COMMA NUMBER RBRACKET
+
+    LBRACKET        shift and go to state 41
+
+
+state 34
+
+    (5) panelTitle -> TITLE DPOINTS QUOTES . STRING QUOTES
+
+    STRING          shift and go to state 42
+
+
+state 35
+
+    (18) panel -> PANEL ID BEGIN . panelFeatures component END component
+    (4) panelFeatures -> . panelTitle size background
+    (5) panelTitle -> . TITLE DPOINTS QUOTES STRING QUOTES
+
+    TITLE           shift and go to state 9
+
+    panelFeatures                  shift and go to state 43
+    panelTitle                     shift and go to state 8
+
+state 36
+
+    (19) textBox -> TBOX ID BEGIN . textBoxFeatures END component
+    (20) textBoxFeatures -> . text size background
+    (21) text -> . TEXT DPOINTS QUOTES STRING QUOTES
+
+    TEXT            shift and go to state 46
+
+    textBoxFeatures                shift and go to state 44
+    text                           shift and go to state 45
+
+state 37
+
+    (22) comboBox -> CBOX ID BEGIN . comboBoxFeatures END component
+    (23) comboBoxFeatures -> . list comboBoxValues size background
+    (24) list -> . LIST DPOINTS LBRACKET listValues RBRACKET
+
+    LIST            shift and go to state 49
+
+    comboBoxFeatures               shift and go to state 47
+    list                           shift and go to state 48
+
+state 38
+
+    (32) checkBox -> CHBOX ID BEGIN . list END component
+    (24) list -> . LIST DPOINTS LBRACKET listValues RBRACKET
+
+    LIST            shift and go to state 49
+
+    list                           shift and go to state 50
+
+state 39
+
+    (33) button -> BUTTON ID BEGIN . buttonFeatures END component
+    (34) buttonFeatures -> . text background buttonOnClick
+    (21) text -> . TEXT DPOINTS QUOTES STRING QUOTES
+
+    TEXT            shift and go to state 46
+
+    buttonFeatures                 shift and go to state 51
+    text                           shift and go to state 52
+
+state 40
+
+    (7) background -> BGROUND DPOINTS . color
+    (8) color -> . WHITE
+    (9) color -> . RED
+    (10) color -> . GREEN
+    (11) color -> . GRAY
+
+    WHITE           shift and go to state 54
+    RED             shift and go to state 55
+    GREEN           shift and go to state 56
+    GRAY            shift and go to state 57
+
+    color                          shift and go to state 53
+
+state 41
+
+    (6) size -> SIZE DPOINTS LBRACKET . NUMBER COMMA NUMBER RBRACKET
+
+    NUMBER          shift and go to state 58
+
+
+state 42
+
+    (5) panelTitle -> TITLE DPOINTS QUOTES STRING . QUOTES
+
+    QUOTES          shift and go to state 59
+
+
+state 43
+
+    (18) panel -> PANEL ID BEGIN panelFeatures . component END component
+    (12) component -> . panel
+    (13) component -> . textBox
+    (14) component -> . comboBox
+    (15) component -> . checkBox
+    (16) component -> . button
+    (17) component -> . empty
+    (18) panel -> . PANEL ID BEGIN panelFeatures component END component
+    (19) textBox -> . TBOX ID BEGIN textBoxFeatures END component
+    (22) comboBox -> . CBOX ID BEGIN comboBoxFeatures END component
+    (32) checkBox -> . CHBOX ID BEGIN list END component
+    (33) button -> . BUTTON ID BEGIN buttonFeatures END component
+    (38) empty -> .
+
+    PANEL           shift and go to state 18
+    TBOX            shift and go to state 19
+    CBOX            shift and go to state 20
+    CHBOX           shift and go to state 21
+    BUTTON          shift and go to state 22
+    END             reduce using rule 38 (empty -> .)
+
+    component                      shift and go to state 60
+    panel                          shift and go to state 12
+    textBox                        shift and go to state 13
+    comboBox                       shift and go to state 14
+    checkBox                       shift and go to state 15
+    button                         shift and go to state 16
+    empty                          shift and go to state 17
+
+state 44
+
+    (19) textBox -> TBOX ID BEGIN textBoxFeatures . END component
+
+    END             shift and go to state 61
+
+
+state 45
+
+    (20) textBoxFeatures -> text . size background
+    (6) size -> . SIZE DPOINTS LBRACKET NUMBER COMMA NUMBER RBRACKET
+
+    SIZE            shift and go to state 24
+
+    size                           shift and go to state 62
+
+state 46
+
+    (21) text -> TEXT . DPOINTS QUOTES STRING QUOTES
+
+    DPOINTS         shift and go to state 63
+
+
+state 47
+
+    (22) comboBox -> CBOX ID BEGIN comboBoxFeatures . END component
+
+    END             shift and go to state 64
+
+
+state 48
+
+    (23) comboBoxFeatures -> list . comboBoxValues size background
+    (28) comboBoxValues -> . VALUES DPOINTS LBRACKET valuesValues RBRACKET
+
+    VALUES          shift and go to state 66
+
+    comboBoxValues                 shift and go to state 65
+
+state 49
+
+    (24) list -> LIST . DPOINTS LBRACKET listValues RBRACKET
+
+    DPOINTS         shift and go to state 67
+
+
+state 50
+
+    (32) checkBox -> CHBOX ID BEGIN list . END component
+
+    END             shift and go to state 68
+
+
+state 51
+
+    (33) button -> BUTTON ID BEGIN buttonFeatures . END component
+
+    END             shift and go to state 69
+
+
+state 52
+
+    (34) buttonFeatures -> text . background buttonOnClick
+    (7) background -> . BGROUND DPOINTS color
+
+    BGROUND         shift and go to state 32
+
+    background                     shift and go to state 70
+
+state 53
+
+    (7) background -> BGROUND DPOINTS color .
+
+    PANEL           reduce using rule 7 (background -> BGROUND DPOINTS color .)
+    TBOX            reduce using rule 7 (background -> BGROUND DPOINTS color .)
+    CBOX            reduce using rule 7 (background -> BGROUND DPOINTS color .)
+    CHBOX           reduce using rule 7 (background -> BGROUND DPOINTS color .)
+    BUTTON          reduce using rule 7 (background -> BGROUND DPOINTS color .)
+    END             reduce using rule 7 (background -> BGROUND DPOINTS color .)
+    ONCLICK         reduce using rule 7 (background -> BGROUND DPOINTS color .)
+
+
+state 54
+
+    (8) color -> WHITE .
+
+    PANEL           reduce using rule 8 (color -> WHITE .)
+    TBOX            reduce using rule 8 (color -> WHITE .)
+    CBOX            reduce using rule 8 (color -> WHITE .)
+    CHBOX           reduce using rule 8 (color -> WHITE .)
+    BUTTON          reduce using rule 8 (color -> WHITE .)
+    END             reduce using rule 8 (color -> WHITE .)
+    ONCLICK         reduce using rule 8 (color -> WHITE .)
+
+
+state 55
+
+    (9) color -> RED .
+
+    PANEL           reduce using rule 9 (color -> RED .)
+    TBOX            reduce using rule 9 (color -> RED .)
+    CBOX            reduce using rule 9 (color -> RED .)
+    CHBOX           reduce using rule 9 (color -> RED .)
+    BUTTON          reduce using rule 9 (color -> RED .)
+    END             reduce using rule 9 (color -> RED .)
+    ONCLICK         reduce using rule 9 (color -> RED .)
+
+
+state 56
+
+    (10) color -> GREEN .
+
+    PANEL           reduce using rule 10 (color -> GREEN .)
+    TBOX            reduce using rule 10 (color -> GREEN .)
+    CBOX            reduce using rule 10 (color -> GREEN .)
+    CHBOX           reduce using rule 10 (color -> GREEN .)
+    BUTTON          reduce using rule 10 (color -> GREEN .)
+    END             reduce using rule 10 (color -> GREEN .)
+    ONCLICK         reduce using rule 10 (color -> GREEN .)
+
+
+state 57
+
+    (11) color -> GRAY .
+
+    PANEL           reduce using rule 11 (color -> GRAY .)
+    TBOX            reduce using rule 11 (color -> GRAY .)
+    CBOX            reduce using rule 11 (color -> GRAY .)
+    CHBOX           reduce using rule 11 (color -> GRAY .)
+    BUTTON          reduce using rule 11 (color -> GRAY .)
+    END             reduce using rule 11 (color -> GRAY .)
+    ONCLICK         reduce using rule 11 (color -> GRAY .)
+
+
+state 58
+
+    (6) size -> SIZE DPOINTS LBRACKET NUMBER . COMMA NUMBER RBRACKET
+
+    COMMA           shift and go to state 71
+
+
+state 59
+
+    (5) panelTitle -> TITLE DPOINTS QUOTES STRING QUOTES .
+
+    SIZE            reduce using rule 5 (panelTitle -> TITLE DPOINTS QUOTES STRING QUOTES .)
+
+
+state 60
+
+    (18) panel -> PANEL ID BEGIN panelFeatures component . END component
+
+    END             shift and go to state 72
+
+
+state 61
+
+    (19) textBox -> TBOX ID BEGIN textBoxFeatures END . component
+    (12) component -> . panel
+    (13) component -> . textBox
+    (14) component -> . comboBox
+    (15) component -> . checkBox
+    (16) component -> . button
+    (17) component -> . empty
+    (18) panel -> . PANEL ID BEGIN panelFeatures component END component
+    (19) textBox -> . TBOX ID BEGIN textBoxFeatures END component
+    (22) comboBox -> . CBOX ID BEGIN comboBoxFeatures END component
+    (32) checkBox -> . CHBOX ID BEGIN list END component
+    (33) button -> . BUTTON ID BEGIN buttonFeatures END component
+    (38) empty -> .
+
+    PANEL           shift and go to state 18
+    TBOX            shift and go to state 19
+    CBOX            shift and go to state 20
+    CHBOX           shift and go to state 21
+    BUTTON          shift and go to state 22
+    END             reduce using rule 38 (empty -> .)
+
+    component                      shift and go to state 73
+    panel                          shift and go to state 12
+    textBox                        shift and go to state 13
+    comboBox                       shift and go to state 14
+    checkBox                       shift and go to state 15
+    button                         shift and go to state 16
+    empty                          shift and go to state 17
+
+state 62
+
+    (20) textBoxFeatures -> text size . background
+    (7) background -> . BGROUND DPOINTS color
+
+    BGROUND         shift and go to state 32
+
+    background                     shift and go to state 74
+
+state 63
+
+    (21) text -> TEXT DPOINTS . QUOTES STRING QUOTES
+
+    QUOTES          shift and go to state 75
+
+
+state 64
+
+    (22) comboBox -> CBOX ID BEGIN comboBoxFeatures END . component
+    (12) component -> . panel
+    (13) component -> . textBox
+    (14) component -> . comboBox
+    (15) component -> . checkBox
+    (16) component -> . button
+    (17) component -> . empty
+    (18) panel -> . PANEL ID BEGIN panelFeatures component END component
+    (19) textBox -> . TBOX ID BEGIN textBoxFeatures END component
+    (22) comboBox -> . CBOX ID BEGIN comboBoxFeatures END component
+    (32) checkBox -> . CHBOX ID BEGIN list END component
+    (33) button -> . BUTTON ID BEGIN buttonFeatures END component
+    (38) empty -> .
+
+    PANEL           shift and go to state 18
+    TBOX            shift and go to state 19
+    CBOX            shift and go to state 20
+    CHBOX           shift and go to state 21
+    BUTTON          shift and go to state 22
+    END             reduce using rule 38 (empty -> .)
+
+    component                      shift and go to state 76
+    panel                          shift and go to state 12
+    textBox                        shift and go to state 13
+    comboBox                       shift and go to state 14
+    checkBox                       shift and go to state 15
+    button                         shift and go to state 16
+    empty                          shift and go to state 17
+
+state 65
+
+    (23) comboBoxFeatures -> list comboBoxValues . size background
+    (6) size -> . SIZE DPOINTS LBRACKET NUMBER COMMA NUMBER RBRACKET
+
+    SIZE            shift and go to state 24
+
+    size                           shift and go to state 77
+
+state 66
+
+    (28) comboBoxValues -> VALUES . DPOINTS LBRACKET valuesValues RBRACKET
+
+    DPOINTS         shift and go to state 78
+
+
+state 67
+
+    (24) list -> LIST DPOINTS . LBRACKET listValues RBRACKET
+
+    LBRACKET        shift and go to state 79
+
+
+state 68
+
+    (32) checkBox -> CHBOX ID BEGIN list END . component
+    (12) component -> . panel
+    (13) component -> . textBox
+    (14) component -> . comboBox
+    (15) component -> . checkBox
+    (16) component -> . button
+    (17) component -> . empty
+    (18) panel -> . PANEL ID BEGIN panelFeatures component END component
+    (19) textBox -> . TBOX ID BEGIN textBoxFeatures END component
+    (22) comboBox -> . CBOX ID BEGIN comboBoxFeatures END component
+    (32) checkBox -> . CHBOX ID BEGIN list END component
+    (33) button -> . BUTTON ID BEGIN buttonFeatures END component
+    (38) empty -> .
+
+    PANEL           shift and go to state 18
+    TBOX            shift and go to state 19
+    CBOX            shift and go to state 20
+    CHBOX           shift and go to state 21
+    BUTTON          shift and go to state 22
+    END             reduce using rule 38 (empty -> .)
+
+    component                      shift and go to state 80
+    panel                          shift and go to state 12
+    textBox                        shift and go to state 13
+    comboBox                       shift and go to state 14
+    checkBox                       shift and go to state 15
+    button                         shift and go to state 16
+    empty                          shift and go to state 17
+
+state 69
+
+    (33) button -> BUTTON ID BEGIN buttonFeatures END . component
+    (12) component -> . panel
+    (13) component -> . textBox
+    (14) component -> . comboBox
+    (15) component -> . checkBox
+    (16) component -> . button
+    (17) component -> . empty
+    (18) panel -> . PANEL ID BEGIN panelFeatures component END component
+    (19) textBox -> . TBOX ID BEGIN textBoxFeatures END component
+    (22) comboBox -> . CBOX ID BEGIN comboBoxFeatures END component
+    (32) checkBox -> . CHBOX ID BEGIN list END component
+    (33) button -> . BUTTON ID BEGIN buttonFeatures END component
+    (38) empty -> .
+
+    PANEL           shift and go to state 18
+    TBOX            shift and go to state 19
+    CBOX            shift and go to state 20
+    CHBOX           shift and go to state 21
+    BUTTON          shift and go to state 22
+    END             reduce using rule 38 (empty -> .)
+
+    component                      shift and go to state 81
+    panel                          shift and go to state 12
+    textBox                        shift and go to state 13
+    comboBox                       shift and go to state 14
+    checkBox                       shift and go to state 15
+    button                         shift and go to state 16
+    empty                          shift and go to state 17
+
+state 70
+
+    (34) buttonFeatures -> text background . buttonOnClick
+    (35) buttonOnClick -> . ONCLICK DPOINTS buttonAction
+
+    ONCLICK         shift and go to state 83
+
+    buttonOnClick                  shift and go to state 82
+
+state 71
+
+    (6) size -> SIZE DPOINTS LBRACKET NUMBER COMMA . NUMBER RBRACKET
+
+    NUMBER          shift and go to state 84
+
+
+state 72
+
+    (18) panel -> PANEL ID BEGIN panelFeatures component END . component
+    (12) component -> . panel
+    (13) component -> . textBox
+    (14) component -> . comboBox
+    (15) component -> . checkBox
+    (16) component -> . button
+    (17) component -> . empty
+    (18) panel -> . PANEL ID BEGIN panelFeatures component END component
+    (19) textBox -> . TBOX ID BEGIN textBoxFeatures END component
+    (22) comboBox -> . CBOX ID BEGIN comboBoxFeatures END component
+    (32) checkBox -> . CHBOX ID BEGIN list END component
+    (33) button -> . BUTTON ID BEGIN buttonFeatures END component
+    (38) empty -> .
+
+    PANEL           shift and go to state 18
+    TBOX            shift and go to state 19
+    CBOX            shift and go to state 20
+    CHBOX           shift and go to state 21
+    BUTTON          shift and go to state 22
+    END             reduce using rule 38 (empty -> .)
+
+    component                      shift and go to state 85
+    panel                          shift and go to state 12
+    textBox                        shift and go to state 13
+    comboBox                       shift and go to state 14
+    checkBox                       shift and go to state 15
+    button                         shift and go to state 16
+    empty                          shift and go to state 17
+
+state 73
+
+    (19) textBox -> TBOX ID BEGIN textBoxFeatures END component .
+
+    END             reduce using rule 19 (textBox -> TBOX ID BEGIN textBoxFeatures END component .)
+
+
+state 74
+
+    (20) textBoxFeatures -> text size background .
+
+    END             reduce using rule 20 (textBoxFeatures -> text size background .)
+
+
+state 75
+
+    (21) text -> TEXT DPOINTS QUOTES . STRING QUOTES
+
+    STRING          shift and go to state 86
+
+
+state 76
+
+    (22) comboBox -> CBOX ID BEGIN comboBoxFeatures END component .
+
+    END             reduce using rule 22 (comboBox -> CBOX ID BEGIN comboBoxFeatures END component .)
+
+
+state 77
+
+    (23) comboBoxFeatures -> list comboBoxValues size . background
+    (7) background -> . BGROUND DPOINTS color
+
+    BGROUND         shift and go to state 32
+
+    background                     shift and go to state 87
+
+state 78
+
+    (28) comboBoxValues -> VALUES DPOINTS . LBRACKET valuesValues RBRACKET
+
+    LBRACKET        shift and go to state 88
+
+
+state 79
+
+    (24) list -> LIST DPOINTS LBRACKET . listValues RBRACKET
+    (25) listValues -> . ID llValues
+
+    ID              shift and go to state 90
+
+    listValues                     shift and go to state 89
+
+state 80
+
+    (32) checkBox -> CHBOX ID BEGIN list END component .
+
+    END             reduce using rule 32 (checkBox -> CHBOX ID BEGIN list END component .)
+
+
+state 81
+
+    (33) button -> BUTTON ID BEGIN buttonFeatures END component .
+
+    END             reduce using rule 33 (button -> BUTTON ID BEGIN buttonFeatures END component .)
+
+
+state 82
+
+    (34) buttonFeatures -> text background buttonOnClick .
+
+    END             reduce using rule 34 (buttonFeatures -> text background buttonOnClick .)
+
+
+state 83
+
+    (35) buttonOnClick -> ONCLICK . DPOINTS buttonAction
+
+    DPOINTS         shift and go to state 91
+
+
+state 84
+
+    (6) size -> SIZE DPOINTS LBRACKET NUMBER COMMA NUMBER . RBRACKET
+
+    RBRACKET        shift and go to state 92
+
+
+state 85
+
+    (18) panel -> PANEL ID BEGIN panelFeatures component END component .
+
+    END             reduce using rule 18 (panel -> PANEL ID BEGIN panelFeatures component END component .)
+
+
+state 86
+
+    (21) text -> TEXT DPOINTS QUOTES STRING . QUOTES
+
+    QUOTES          shift and go to state 93
+
+
+state 87
+
+    (23) comboBoxFeatures -> list comboBoxValues size background .
+
+    END             reduce using rule 23 (comboBoxFeatures -> list comboBoxValues size background .)
+
+
+state 88
+
+    (28) comboBoxValues -> VALUES DPOINTS LBRACKET . valuesValues RBRACKET
+    (29) valuesValues -> . NUMBER lvValues
+
+    NUMBER          shift and go to state 95
+
+    valuesValues                   shift and go to state 94
+
+state 89
+
+    (24) list -> LIST DPOINTS LBRACKET listValues . RBRACKET
+
+    RBRACKET        shift and go to state 96
+
+
+state 90
+
+    (25) listValues -> ID . llValues
+    (26) llValues -> . COMMA ID llValues
+    (27) llValues -> . empty
+    (38) empty -> .
+
+    COMMA           shift and go to state 98
+    RBRACKET        reduce using rule 38 (empty -> .)
+
+    llValues                       shift and go to state 97
+    empty                          shift and go to state 99
+
+state 91
+
+    (35) buttonOnClick -> ONCLICK DPOINTS . buttonAction
+    (36) buttonAction -> . BTNOK
+    (37) buttonAction -> . BTNCANCEL
+
+    BTNOK           shift and go to state 101
+    BTNCANCEL       shift and go to state 102
+
+    buttonAction                   shift and go to state 100
+
+state 92
+
+    (6) size -> SIZE DPOINTS LBRACKET NUMBER COMMA NUMBER RBRACKET .
+
+    BGROUND         reduce using rule 6 (size -> SIZE DPOINTS LBRACKET NUMBER COMMA NUMBER RBRACKET .)
+
+
+state 93
+
+    (21) text -> TEXT DPOINTS QUOTES STRING QUOTES .
+
+    SIZE            reduce using rule 21 (text -> TEXT DPOINTS QUOTES STRING QUOTES .)
+    BGROUND         reduce using rule 21 (text -> TEXT DPOINTS QUOTES STRING QUOTES .)
+
+
+state 94
+
+    (28) comboBoxValues -> VALUES DPOINTS LBRACKET valuesValues . RBRACKET
+
+    RBRACKET        shift and go to state 103
+
+
+state 95
+
+    (29) valuesValues -> NUMBER . lvValues
+    (30) lvValues -> . COMMA NUMBER lvValues
+    (31) lvValues -> . empty
+    (38) empty -> .
+
+    COMMA           shift and go to state 105
+    RBRACKET        reduce using rule 38 (empty -> .)
+
+    lvValues                       shift and go to state 104
+    empty                          shift and go to state 106
+
+state 96
+
+    (24) list -> LIST DPOINTS LBRACKET listValues RBRACKET .
+
+    VALUES          reduce using rule 24 (list -> LIST DPOINTS LBRACKET listValues RBRACKET .)
+    END             reduce using rule 24 (list -> LIST DPOINTS LBRACKET listValues RBRACKET .)
+
+
+state 97
+
+    (25) listValues -> ID llValues .
+
+    RBRACKET        reduce using rule 25 (listValues -> ID llValues .)
+
+
+state 98
+
+    (26) llValues -> COMMA . ID llValues
+
+    ID              shift and go to state 107
+
+
+state 99
+
+    (27) llValues -> empty .
+
+    RBRACKET        reduce using rule 27 (llValues -> empty .)
+
+
+state 100
+
+    (35) buttonOnClick -> ONCLICK DPOINTS buttonAction .
+
+    END             reduce using rule 35 (buttonOnClick -> ONCLICK DPOINTS buttonAction .)
+
+
+state 101
+
+    (36) buttonAction -> BTNOK .
+
+    END             reduce using rule 36 (buttonAction -> BTNOK .)
+
+
+state 102
+
+    (37) buttonAction -> BTNCANCEL .
+
+    END             reduce using rule 37 (buttonAction -> BTNCANCEL .)
+
+
+state 103
+
+    (28) comboBoxValues -> VALUES DPOINTS LBRACKET valuesValues RBRACKET .
+
+    SIZE            reduce using rule 28 (comboBoxValues -> VALUES DPOINTS LBRACKET valuesValues RBRACKET .)
+
+
+state 104
+
+    (29) valuesValues -> NUMBER lvValues .
+
+    RBRACKET        reduce using rule 29 (valuesValues -> NUMBER lvValues .)
+
+
+state 105
+
+    (30) lvValues -> COMMA . NUMBER lvValues
+
+    NUMBER          shift and go to state 108
+
+
+state 106
+
+    (31) lvValues -> empty .
+
+    RBRACKET        reduce using rule 31 (lvValues -> empty .)
+
+
+state 107
+
+    (26) llValues -> COMMA ID . llValues
+    (26) llValues -> . COMMA ID llValues
+    (27) llValues -> . empty
+    (38) empty -> .
+
+    COMMA           shift and go to state 98
+    RBRACKET        reduce using rule 38 (empty -> .)
+
+    llValues                       shift and go to state 109
+    empty                          shift and go to state 99
+
+state 108
+
+    (30) lvValues -> COMMA NUMBER . lvValues
+    (30) lvValues -> . COMMA NUMBER lvValues
+    (31) lvValues -> . empty
+    (38) empty -> .
+
+    COMMA           shift and go to state 105
+    RBRACKET        reduce using rule 38 (empty -> .)
+
+    lvValues                       shift and go to state 110
+    empty                          shift and go to state 106
+
+state 109
+
+    (26) llValues -> COMMA ID llValues .
+
+    RBRACKET        reduce using rule 26 (llValues -> COMMA ID llValues .)
+
+
+state 110
+
+    (30) lvValues -> COMMA NUMBER lvValues .
+
+    RBRACKET        reduce using rule 30 (lvValues -> COMMA NUMBER lvValues .)
+

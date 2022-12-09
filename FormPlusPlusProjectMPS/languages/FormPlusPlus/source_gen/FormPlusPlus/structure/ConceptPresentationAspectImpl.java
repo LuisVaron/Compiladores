@@ -22,10 +22,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Component;
   private ConceptPresentation props_Document;
   private ConceptPresentation props_Form;
-  private ConceptPresentation props_FormComponents;
+  private ConceptPresentation props_FormComponent;
   private ConceptPresentation props_List;
-  private ConceptPresentation props_ListValue;
   private ConceptPresentation props_ListValues;
+  private ConceptPresentation props_LlValues;
   private ConceptPresentation props_Panel;
   private ConceptPresentation props_PanelFeatures;
   private ConceptPresentation props_PanelTitle;
@@ -33,7 +33,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Text;
   private ConceptPresentation props_TextBox;
   private ConceptPresentation props_TextBoxFeatures;
-  private ConceptPresentation props_Textws;
   private ConceptPresentation props_ValuesValues;
   private ConceptPresentation props_Valuesvalue;
 
@@ -132,13 +131,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Form = cpb.create();
         }
         return props_Form;
-      case LanguageConceptSwitch.FormComponents:
-        if (props_FormComponents == null) {
+      case LanguageConceptSwitch.FormComponent:
+        if (props_FormComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("FormComponents");
-          props_FormComponents = cpb.create();
+          cpb.rawPresentation("FormComponent");
+          props_FormComponent = cpb.create();
         }
-        return props_FormComponents;
+        return props_FormComponent;
       case LanguageConceptSwitch.List:
         if (props_List == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -146,13 +145,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_List = cpb.create();
         }
         return props_List;
-      case LanguageConceptSwitch.ListValue:
-        if (props_ListValue == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ListValue");
-          props_ListValue = cpb.create();
-        }
-        return props_ListValue;
       case LanguageConceptSwitch.ListValues:
         if (props_ListValues == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -160,10 +152,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ListValues = cpb.create();
         }
         return props_ListValues;
+      case LanguageConceptSwitch.LlValues:
+        if (props_LlValues == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LlValues");
+          props_LlValues = cpb.create();
+        }
+        return props_LlValues;
       case LanguageConceptSwitch.Panel:
         if (props_Panel == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Panel");
+          cpb.rawPresentation("panel");
           props_Panel = cpb.create();
         }
         return props_Panel;
@@ -209,13 +208,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TextBoxFeatures = cpb.create();
         }
         return props_TextBoxFeatures;
-      case LanguageConceptSwitch.Textws:
-        if (props_Textws == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Textws");
-          props_Textws = cpb.create();
-        }
-        return props_Textws;
       case LanguageConceptSwitch.ValuesValues:
         if (props_ValuesValues == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

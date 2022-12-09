@@ -11,16 +11,16 @@ class Node():
 
 
 class document(Node):
-    def __init__(self, ID, son1, name):
+    def __init__(self, ID, form, name):
         self.name = name
         self.ID = ID
-        self.son1 = son1
+        self.form = form
 
     def interpret(self, ident):
-        son1 = self.son1.interpret('\t\t' + ident)
+        form = self.form.interpret('\t\t' + ident)
         return('<!DOCTYPE html>\n<html>\n'+
         f'{ident}<head><title>{self.ID}</title></head>\n'+
-        f'{ident}<body>\n\t{ident}<center>\n{son1}\n\t{ident}</center>\n{ident}</body>\n'+
+        f'{ident}<body>\n\t{ident}<center>\n{form}\n\t{ident}</center>\n{ident}</body>\n'+
         '</html>')
 
 
@@ -35,29 +35,29 @@ class form(Node):
 
 
 class formComponent(Node):
-    def __init__(self, son1, son2, name):
+    def __init__(self, panelFeatures, component, name):
         self.name = name
-        self.son1 = son1  #panelFeatures
-        self.son2 = son2  #Component
+        self.panelFeatures = panelFeatures
+        self.component = component 
 
     def interpret(self, ident):
-        son1 = self.son1.interpret(ident)
-        son2 = self.son2.interpret(ident)
-        return(f'{son1}\n{son2}')
+        panelFeatures = self.panelFeatures.interpret(ident)
+        component = self.component.interpret(ident)
+        return(f'{panelFeatures}\n{component}')
 
 
 class panelFeatures(Node):
-    def __init__(self, son1, son2, son3, name):
+    def __init__(self, title, size, bground, name):
         self.name = name
-        self.son1 = son1  #Title
-        self.son2 = son2  #Background
-        self.son3 = son3  #Size
+        self.title = title
+        self.bground = bground 
+        self.size = size 
 
     def interpret(self, ident):
-        son1 = self.son1.interpret()
-        son2 = self.son2.interpret()
-        son3 = self.son3.interpret()
-        return(f'style="text-align: left; font-family: calibri; {son3}; {son2}">\n{ident}{son1}')
+        title = self.title.interpret()
+        size = self.size.interpret()
+        bground = self.bground.interpret()
+        return(f'style="text-align: left; font-family: calibri; {size}; {bground}">\n{ident}{title}')
 
 
 class panelTitle(Node):
@@ -70,13 +70,13 @@ class panelTitle(Node):
 
 
 class size(Node):
-    def __init__(self, n1, n2, name):
+    def __init__(self, height, width, name):
         self.name = name
-        self.n1 = n1
-        self.n2 = n2
+        self.height = height
+        self.width = width
     
     def interpret(self):
-        return(f'height: {self.n1}px; width: {self.n2}px')
+        return(f'height: {self.height}px; width: {self.width}px')
 
 
 class background(Node):
@@ -307,18 +307,20 @@ class listValues(Node):
     def interpret(self, ident, lType):
         if(lType == 'ch'):
             son1 = self.son1.interpret(ident, lType)
-            return(f'{ident}<input type="checkbox" id="{self.ID}" name="{self.ID}" value="{self.ID}"/> <label>{self.ID}</label> <br>\n{son1}')
+            return (f'{ident}<input type="checkbox" id="{self.ID}" name="{self.ID}" value="{self.ID}"/> <label>{self.ID}</label> <br>\n{son1}')
         
 
 
 class llValues(Node):
-    def __init__(self, son1, name):
+    def __init__(self, ID, son1, name):
         self.name = name
+        self.ID = ID
         self.son1 = son1
     
     def interpret(self, ident, lType):
-        son1 = self.son1.interpret(ident, lType)
-        return(son1)
+        if(lType == 'ch')
+            son1 = self.son1.interpret(ident, lType)
+            return(f'{ident}<input type="checkbox" id="{self.ID}" name="{self.ID}" value="{self.ID}"/> <label>{self.ID}</label> <br>\n{son1}')
 
 
 class comboBoxValues(Node):
