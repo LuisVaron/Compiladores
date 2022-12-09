@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head><title>frmDatos</title></head>
+	<body>
+		<center>
+			<form style="text-align: left; font-family: calibri; height: 350px; width: 850px; background-color: WHITE">
+				<h2>Formulario para recolectar datos bsicos</h2>
+				<input type="button" id="Cancel" onclick="btnCancelOnclick" value="Cancelar" style="background-color: GRAY"><br><br>
+				<div id="DatosBasicos" style="text-align: left; font-family: calibri; height: 250px; width: 250px; background-color: RED">
+					<h2>Datos Basicos</h2>
+					<label for="Name">Nombre:</label>
+					<input type="text" id="Name" name="Name" style="background-color: WHITE; height: 20px; width: 50px"><br><br>
+					<label for="Id">Identifier:</label>
+					<input type="text" id="Id" name="Id" style="background-color: WHITE; height: 20px; width: 50px"><br><br>
+					Sexo:<br>
+					<input type="checkbox" id="Masculino" name="Masculino" value="Masculino"/> <label>Masculino</label> <br>
+					<input type="checkbox" id="Femenino" name="Femenino" value="Femenino"/> <label>Femenino</label> <br>
+					<input type="checkbox" id="LGBTIQ+" name="LGBTIQ+" value="LGBTIQ+"/> <label>LGBTIQ+</label> <br>
+
+
+				</div>
+				<div id="Botones" style="text-align: left; font-family: calibri; height: 250px; width: 150px; background-color: GREEN">
+					<h2>Acciones</h2>
+					<input type="button" id="OK" onclick="btnOKOnclick" value="Aceptar" style="background-color: GRAY"><br><br>
+					<input type="button" id="Cancel" onclick="btnCancelOnclick" value="Cancelar" style="background-color: GRAY"><br><br>
+
+				</div>
+
+			</form>
+		</center>
+	</body>
+</html>

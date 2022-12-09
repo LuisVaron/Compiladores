@@ -13,7 +13,7 @@ def p_form(p):
     print('form')
     p[0] = form(p[2], 'form')
 
-def p_formComponents(p):
+def p_formComponent(p):
     '''formComponent : panelFeatures component'''
     p[0] = formComponent(p[1], p[2], 'formComponent')
     print('formComponent')
@@ -129,8 +129,8 @@ def p_listValues(p):
     print('listValues')
 
 def p_llValues(p):
-    '''llValues : COMMA listValues'''
-    p[0] = llValues(p[2], 'llValues')
+    '''llValues : COMMA ID llValues'''
+    p[0] = llValues(p[2], p[3], 'llValues')
     print('llValues')
 
 def p_llValuesEmpty(p):
@@ -149,8 +149,8 @@ def p_valuesValues(p):
     print('valuesValues')
 
 def p_lvValues(p):
-    '''lvValues : COMMA valuesValues'''
-    p[0] = lvValues(p[2], 'lvValues')
+    '''lvValues : COMMA NUMBER lvValues'''
+    p[0] = lvValues(p[3], 'lvValues')
     print('lvValues')
 
 def p_lvValuesEmpty(p):

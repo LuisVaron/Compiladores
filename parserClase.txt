@@ -1,0 +1,28 @@
+Personal:
+  Name: Fran Romero
+  Age: 18
+  City: Bogota
+Grades:
+  Compiladores: 1.5
+  Sistemas_Inteligentes : 1
+
+-----------------------PROFESOR---------------------
+<Student> ::= 'Personal: ' <Personal> 'Grades: ' <Grades>
+<Personal> ::= <Item><PerOpt> 
+<PerOpt> ::= <Personal> | lmd
+<Item> ::= <ID> ':' <FreeText>
+<Grades> ::= <Grade><GraOpt>
+<GraOpt> ::= <Grades> | lmd
+<Grade>  ::= <ID> ':' <FreeText>
+
+
+S ::= a:Pb:G
+P ::= IA
+A ::= P
+I ::= i:t
+G ::= RB
+B ::= G
+R ::= i:n
+
+
+a:i:ti:ti:tb:i:n

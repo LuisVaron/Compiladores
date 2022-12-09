@@ -29,10 +29,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptComponent = createDescriptorForComponent();
   /*package*/ final ConceptDescriptor myConceptDocument = createDescriptorForDocument();
   /*package*/ final ConceptDescriptor myConceptForm = createDescriptorForForm();
-  /*package*/ final ConceptDescriptor myConceptFormComponents = createDescriptorForFormComponents();
+  /*package*/ final ConceptDescriptor myConceptFormComponent = createDescriptorForFormComponent();
   /*package*/ final ConceptDescriptor myConceptList = createDescriptorForList();
-  /*package*/ final ConceptDescriptor myConceptListValue = createDescriptorForListValue();
   /*package*/ final ConceptDescriptor myConceptListValues = createDescriptorForListValues();
+  /*package*/ final ConceptDescriptor myConceptLlValues = createDescriptorForLlValues();
   /*package*/ final ConceptDescriptor myConceptPanel = createDescriptorForPanel();
   /*package*/ final ConceptDescriptor myConceptPanelFeatures = createDescriptorForPanelFeatures();
   /*package*/ final ConceptDescriptor myConceptPanelTitle = createDescriptorForPanelTitle();
@@ -40,7 +40,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptText = createDescriptorForText();
   /*package*/ final ConceptDescriptor myConceptTextBox = createDescriptorForTextBox();
   /*package*/ final ConceptDescriptor myConceptTextBoxFeatures = createDescriptorForTextBoxFeatures();
-  /*package*/ final ConceptDescriptor myConceptTextws = createDescriptorForTextws();
   /*package*/ final ConceptDescriptor myConceptValuesValues = createDescriptorForValuesValues();
   /*package*/ final ConceptDescriptor myConceptValuesvalue = createDescriptorForValuesvalue();
   /*package*/ final EnumerationDescriptor myEnumerationEnumButtonAction = new EnumerationDescriptor_EnumButtonAction();
@@ -59,7 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptBackground, myConceptButton, myConceptButtonAction, myConceptButtonFeatures, myConceptButtonOnClick, myConceptCheckBox, myConceptColor, myConceptComboBox, myConceptComboBoxFeatures, myConceptComboBoxValues, myConceptComponent, myConceptDocument, myConceptForm, myConceptFormComponents, myConceptList, myConceptListValue, myConceptListValues, myConceptPanel, myConceptPanelFeatures, myConceptPanelTitle, myConceptSize, myConceptText, myConceptTextBox, myConceptTextBoxFeatures, myConceptTextws, myConceptValuesValues, myConceptValuesvalue);
+    return Arrays.asList(myConceptBackground, myConceptButton, myConceptButtonAction, myConceptButtonFeatures, myConceptButtonOnClick, myConceptCheckBox, myConceptColor, myConceptComboBox, myConceptComboBoxFeatures, myConceptComboBoxValues, myConceptComponent, myConceptDocument, myConceptForm, myConceptFormComponent, myConceptList, myConceptListValues, myConceptLlValues, myConceptPanel, myConceptPanelFeatures, myConceptPanelTitle, myConceptSize, myConceptText, myConceptTextBox, myConceptTextBoxFeatures, myConceptValuesValues, myConceptValuesvalue);
   }
 
   @Override
@@ -92,14 +91,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptDocument;
       case LanguageConceptSwitch.Form:
         return myConceptForm;
-      case LanguageConceptSwitch.FormComponents:
-        return myConceptFormComponents;
+      case LanguageConceptSwitch.FormComponent:
+        return myConceptFormComponent;
       case LanguageConceptSwitch.List:
         return myConceptList;
-      case LanguageConceptSwitch.ListValue:
-        return myConceptListValue;
       case LanguageConceptSwitch.ListValues:
         return myConceptListValues;
+      case LanguageConceptSwitch.LlValues:
+        return myConceptLlValues;
       case LanguageConceptSwitch.Panel:
         return myConceptPanel;
       case LanguageConceptSwitch.PanelFeatures:
@@ -114,8 +113,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTextBox;
       case LanguageConceptSwitch.TextBoxFeatures:
         return myConceptTextBoxFeatures;
-      case LanguageConceptSwitch.Textws:
-        return myConceptTextws;
       case LanguageConceptSwitch.ValuesValues:
         return myConceptValuesValues;
       case LanguageConceptSwitch.Valuesvalue:
@@ -151,6 +148,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("Text", 0x7e92237b5a3a1b99L).type(PrimitiveTypeId.STRING).origin("9120391208080382873").done();
     b.aggregate("ButtonFeatures", 0x7e92237b5a3a1b9bL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f781L).optional(false).ordered(true).multiple(false).origin("9120391208080382875").done();
+    b.aggregate("Component", 0x569314e2fbba9ebdL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L).optional(true).ordered(true).multiple(false).origin("6238352873956744893").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForButtonAction() {
@@ -186,8 +184,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373631");
     b.version(3);
-    b.property("Text", 0x7e92237b5a3a1b92L).type(PrimitiveTypeId.STRING).origin("9120391208080382866").done();
+    b.property("Id", 0x7e92237b5a3a1b92L).type(PrimitiveTypeId.STRING).origin("9120391208080382866").done();
     b.aggregate("List", 0x7e92237b5a3a1b94L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f77bL).optional(false).ordered(true).multiple(false).origin("9120391208080382868").done();
+    b.aggregate("Component", 0x569314e2fbb9eb20L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L).optional(true).ordered(true).multiple(false).origin("6238352873956698912").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForColor() {
@@ -201,12 +200,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForComboBox() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("FormPlusPlus", "ComboBox", 0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f779L);
     b.class_(false, false, false);
-    // extends: FormPlusPlus.structure.Component
-    b.super_(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373625");
     b.version(3);
     b.property("Text", 0x7e92237b5a3a1b67L).type(PrimitiveTypeId.STRING).origin("9120391208080382823").done();
     b.aggregate("ComboBoxFeatures", 0x7e92237b5a3a1b6bL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f77aL).optional(false).ordered(true).multiple(false).origin("9120391208080382827").done();
+    b.aggregate("Component", 0x569314e2fbb68f8fL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L).optional(true).ordered(true).multiple(false).origin("6238352873956478863").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForComboBoxFeatures() {
@@ -249,16 +247,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373611");
     b.version(3);
-    b.aggregate("FormComponents", 0x7e92237b5a3ad4c1L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76cL).optional(false).ordered(true).multiple(false).origin("9120391208080430273").done();
+    b.aggregate("FormComponent", 0x7e92237b5a3ad4c1L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76cL).optional(false).ordered(true).multiple(false).origin("9120391208080430273").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForFormComponents() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("FormPlusPlus", "FormComponents", 0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76cL);
+  private static ConceptDescriptor createDescriptorForFormComponent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("FormPlusPlus", "FormComponent", 0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76cL);
     b.class_(false, false, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373612");
     b.version(3);
     b.aggregate("PanelFeatures", 0x7e92237b5a39f79bL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76dL).optional(false).ordered(true).multiple(false).origin("9120391208080373659").done();
-    b.aggregate("Component", 0x7e92237b5a39f79dL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L).optional(true).ordered(true).multiple(true).origin("9120391208080373661").done();
+    b.aggregate("Component", 0x7e92237b5a39f79dL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L).optional(true).ordered(true).multiple(false).origin("9120391208080373661").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForList() {
@@ -266,24 +264,25 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373627");
     b.version(3);
-    b.aggregate("ListValues", 0x7e92237b5a3a1b80L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f77dL).optional(false).ordered(true).multiple(false).origin("9120391208080382848").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForListValue() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("FormPlusPlus", "ListValue", 0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a439c60L);
-    b.class_(false, false, false);
-    b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208081005664");
-    b.version(3);
-    b.property("Text", 0x7e92237b5a4417d8L).type(PrimitiveTypeId.STRING).origin("9120391208081037272").done();
+    b.aggregate("ListValues", 0x569314e2fbb68febL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x569314e2fbb68fafL).optional(false).ordered(true).multiple(false).origin("6238352873956478955").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForListValues() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("FormPlusPlus", "ListValues", 0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f77dL);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("FormPlusPlus", "ListValues", 0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x569314e2fbb68fafL);
     b.class_(false, false, false);
-    b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373629");
+    b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/6238352873956478895");
     b.version(3);
-    b.property("Text", 0x7e92237b5a3a1b84L).type(PrimitiveTypeId.STRING).origin("9120391208080382852").done();
-    b.aggregate("ListValue", 0x7e92237b5a3a1b82L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a439c60L).optional(true).ordered(true).multiple(true).origin("9120391208080382850").done();
+    b.property("Id", 0x569314e2fbb68fb0L).type(PrimitiveTypeId.STRING).origin("6238352873956478896").done();
+    b.aggregate("LlValues", 0x569314e2fbb68fb2L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x569314e2fbb68fceL).optional(true).ordered(true).multiple(false).origin("6238352873956478898").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForLlValues() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("FormPlusPlus", "LlValues", 0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x569314e2fbb68fceL);
+    b.class_(false, false, false);
+    b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/6238352873956478926");
+    b.version(3);
+    b.property("Id", 0x569314e2fbb938d9L).type(PrimitiveTypeId.STRING).origin("6238352873956653273").done();
+    b.aggregate("LlValues", 0x569314e2fbb68fcfL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x569314e2fbb68fceL).optional(true).ordered(true).multiple(false).origin("6238352873956478927").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPanel() {
@@ -295,7 +294,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("Text", 0x7e92237b5a39f7cbL).type(PrimitiveTypeId.STRING).origin("9120391208080373707").done();
     b.aggregate("PanelFeatures", 0x7e92237b5a39f7cdL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76dL).optional(false).ordered(true).multiple(false).origin("9120391208080373709").done();
-    b.aggregate("Component", 0x7e92237b5a39f7cfL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L).optional(true).ordered(true).multiple(true).origin("9120391208080373711").done();
+    b.aggregate("ComponentI", 0x7e92237b5a39f7cfL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L).optional(true).ordered(true).multiple(false).origin("9120391208080373711").done();
+    b.aggregate("ComponentO", 0x569314e2fbb5df19L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L).optional(true).ordered(true).multiple(false).origin("6238352873956433689").done();
+    b.alias("panel");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPanelFeatures() {
@@ -313,7 +314,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373614");
     b.version(3);
-    b.aggregate("Textws", 0x7e92237b5a39f7afL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f784L).optional(false).ordered(true).multiple(false).origin("9120391208080373679").done();
+    b.property("String", 0x569314e2fbb11eb8L).type(PrimitiveTypeId.STRING).origin("6238352873956122296").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSize() {
@@ -321,8 +322,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373615");
     b.version(3);
-    b.property("Size1", 0x7e92237b5a3a1b90L).type(PrimitiveTypeId.INTEGER).origin("9120391208080382864").done();
-    b.property("Size2", 0x7e92237b5a3bc98aL).type(PrimitiveTypeId.INTEGER).origin("9120391208080492938").done();
+    b.property("Height", 0x7e92237b5a3a1b90L).type(PrimitiveTypeId.INTEGER).origin("9120391208080382864").done();
+    b.property("Width", 0x7e92237b5a3bc98aL).type(PrimitiveTypeId.INTEGER).origin("9120391208080492938").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForText() {
@@ -330,7 +331,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373624");
     b.version(3);
-    b.aggregate("Textws", 0x7e92237b5a3a1b65L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f784L).optional(false).ordered(true).multiple(false).origin("9120391208080382821").done();
+    b.property("String", 0x569314e2fbb11ee5L).type(PrimitiveTypeId.STRING).origin("6238352873956122341").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTextBox() {
@@ -342,6 +343,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("Text", 0x7e92237b5a3a1b55L).type(PrimitiveTypeId.STRING).origin("9120391208080382805").done();
     b.aggregate("TextBoxFeatures", 0x7e92237b5a3a1b57L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f777L).optional(false).ordered(true).multiple(false).origin("9120391208080382807").done();
+    b.aggregate("Component", 0x569314e2fbb52e58L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f772L).optional(true).ordered(true).multiple(false).origin("6238352873956388440").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTextBoxFeatures() {
@@ -354,21 +356,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("Background", 0x7e92237b5a3a1b61L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f770L).optional(false).ordered(true).multiple(false).origin("9120391208080382817").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTextws() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("FormPlusPlus", "Textws", 0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f784L);
-    b.class_(false, false, false);
-    b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373636");
-    b.version(3);
-    b.property("Text", 0x7e92237b5a3a1badL).type(PrimitiveTypeId.STRING).origin("9120391208080382893").done();
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForValuesValues() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("FormPlusPlus", "ValuesValues", 0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f77eL);
     b.class_(false, false, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208080373630");
     b.version(3);
     b.property("Numb", 0x7e92237b5a3a1b8cL).type(PrimitiveTypeId.INTEGER).origin("9120391208080382860").done();
-    b.aggregate("ValuesValue", 0x7e92237b5a3a1b8eL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a449817L).optional(true).ordered(true).multiple(true).origin("9120391208080382862").done();
+    b.aggregate("ValuesValue", 0x7e92237b5a3a1b8eL).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a449817L).optional(true).ordered(true).multiple(false).origin("9120391208080382862").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForValuesvalue() {
@@ -376,7 +370,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:f92c8f3d-2aff-4472-82f4-c11cabfbb93c(FormPlusPlus.structure)/9120391208081070103");
     b.version(3);
-    b.property("Numb", 0x7e92237b5a449818L).type(PrimitiveTypeId.INTEGER).origin("9120391208081070104").done();
+    b.property("num", 0x569314e2fbb88cc8L).type(PrimitiveTypeId.INTEGER).origin("6238352873956609224").done();
+    b.aggregate("ValuesValue", 0x569314e2fbb7e6d8L).target(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a449817L).optional(true).ordered(true).multiple(false).origin("6238352873956566744").done();
     return b.create();
   }
 }

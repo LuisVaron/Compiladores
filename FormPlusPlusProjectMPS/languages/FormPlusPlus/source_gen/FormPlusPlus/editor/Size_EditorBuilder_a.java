@@ -66,11 +66,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.Size1$eHik;
+      final SProperty property = PROPS.Height$eHik;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no Size1>");
-      editorCell.setCellId("property_Size1");
+      editorCell.setDefaultText("<no Height>");
+      editorCell.setCellId("property_Height");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -97,11 +97,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.Size2$3Kos;
+      final SProperty property = PROPS.Width$3Kos;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no Size2>");
-      editorCell.setCellId("property_Size2");
+      editorCell.setDefaultText("<no Width>");
+      editorCell.setCellId("property_Width");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -127,8 +127,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty Size1$eHik = MetaAdapterFactory.getProperty(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76fL, 0x7e92237b5a3a1b90L, "Size1");
-    /*package*/ static final SProperty Size2$3Kos = MetaAdapterFactory.getProperty(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76fL, 0x7e92237b5a3bc98aL, "Size2");
+    /*package*/ static final SProperty Height$eHik = MetaAdapterFactory.getProperty(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76fL, 0x7e92237b5a3a1b90L, "Height");
+    /*package*/ static final SProperty Width$3Kos = MetaAdapterFactory.getProperty(0x33e7f45b147f42d0L, 0x86ff61e2bcaba42eL, 0x7e92237b5a39f76fL, 0x7e92237b5a3bc98aL, "Width");
   }
 
   private static final class CONCEPTS {

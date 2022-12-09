@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-1tc80c43f1li69h7hs5w0uwlca1zsn6" />
+<product version="3" modelHash="-br0uoicwjv2usz88o2gjkej01ra6pwp">
+  <files names="Background__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:ButtonAction__BehaviorDescriptor.java:ButtonFeatures__BehaviorDescriptor.java:ButtonOnClick__BehaviorDescriptor.java:Button__BehaviorDescriptor.java:CheckBox__BehaviorDescriptor.java:Color__BehaviorDescriptor.java:ComboBoxFeatures__BehaviorDescriptor.java:ComboBoxValues__BehaviorDescriptor.java:ComboBox__BehaviorDescriptor.java:Component__BehaviorDescriptor.java:Document__BehaviorDescriptor.java:FormComponent__BehaviorDescriptor.java:Form__BehaviorDescriptor.java:ListValues__BehaviorDescriptor.java:List__BehaviorDescriptor.java:LlValues__BehaviorDescriptor.java:PanelFeatures__BehaviorDescriptor.java:PanelTitle__BehaviorDescriptor.java:Panel__BehaviorDescriptor.java:Size__BehaviorDescriptor.java:TextBoxFeatures__BehaviorDescriptor.java:TextBox__BehaviorDescriptor.java:Text__BehaviorDescriptor.java:ValuesValues__BehaviorDescriptor.java:Valuesvalue__BehaviorDescriptor.java" />
+</product>
 
